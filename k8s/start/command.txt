@@ -1,0 +1,50 @@
+# install docker
+# install minikube
+brew install minikube
+
+# start minikube
+minikube start
+
+# check version
+minikube version
+kubectl version
+
+
+# run pod
+kubectl apply -f k8s/pod.yaml
+kubectl get pods -o wide
+
+# delete all pod
+kubectl delete -f k8s/pod.yaml
+
+# delete single pod
+kubectl delete pod <pod name>
+
+
+# connect ssh internal minikube
+minikube ssh
+curl <ip:port url pod>
+
+
+# scaling application using Deployment
+kubectl apple -f k8s/deployment.yaml
+kubectl get all
+
+# deployment scale pod
+kubectl scale deployment <deployment name> --replicas=5
+
+
+# Export deployment as a service
+kubectl apple -f <deployment yaml file>
+kubectl apple -f <service yaml file>
+kubectl get all
+
+# Check service ip
+minikube ip
+minikube ssh
+ssh:>> curl <service ip>
+ssh:>> while true; do curl <ip service>; sleep 1; done;
+
+
+
+

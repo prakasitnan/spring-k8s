@@ -1,0 +1,12 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: spring-k8s-pod
+spec:
+  restartPolicy: Never
+  containers:
+    - name: k8s-boot-demo
+      image: prakasitnan/spring-k8s:v1
+      imagePullPolicy: Always
+      ports:
+        - containerPort: 8080
